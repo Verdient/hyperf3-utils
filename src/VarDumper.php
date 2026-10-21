@@ -6,6 +6,7 @@ namespace Verdient\Hyperf3\Utils;
 
 /**
  * 变量导出
+ *
  * @author Verdient。
  */
 class VarDumper
@@ -47,7 +48,7 @@ class VarDumper
                             $output .= 'int(' . $value . ')';
                             break;
                         case 'double':
-                            $output .= 'float(' . strlen($value) . ')';
+                            $output .= 'float(' . strlen((string) $value) . ')';
                             break;
                         case 'string':
                             $output .= 'string(' . strlen($value) . ') "' . $value . '"';
@@ -74,7 +75,7 @@ class VarDumper
                 case 'integer':
                     return 'int(' . $variable . ')' . PHP_EOL;
                 case 'double':
-                    return 'float(' . strlen($variable) . ')' . PHP_EOL;
+                    return 'float(' . strlen((string) $variable) . ')' . PHP_EOL;
                 case 'string':
                     return 'string(' . strlen($variable) . ') "' . $variable . '"' . PHP_EOL;
                 case 'object':
